@@ -1,0 +1,89 @@
+{
+  "$settings": {
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.showAbbreviationSuggestions": true,
+    "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+    "emmet.useInlineCompletions": true,
+    "[javascript]": {
+      "editor.maxTokenizationLineLength": 2500
+    },
+    "editor.fontSize": 18,
+    "editor.autoClosingBrackets": "always",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "[html]": {
+      "editor.suggest.insertMode": "replace"
+    },
+    "shellcheck.ignoreFileSchemes": [
+      "git",
+      "gitfs",
+      "output",
+      ".bash"
+    ],
+    "git.enableSmartCommit": true,
+    "git.requireGitUserConfig": false,
+    "reactSnippets.settings.importReactOnTop": false,
+    "reactSnippets.settings.languageScopes": "javascript",
+    "Codegeex.Survey": false,
+    "Codegeex.Privacy": true,
+    "CodeGPT.query.language": "English",
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.colorTheme": "Coldark - Cold",
+    "codeium.enableConfig": {
+      "*": true,
+      "markdown": false,
+      "html": false,
+      "javascript": false
+    },
+    "extensions.closeExtensionDetailsOnViewChange": true,
+    "workbench.activityBar.visible": false,
+    "workbench.editor.showTabs": false,
+    "editor.minimap.enabled": false,
+    "abracadabra.ignoredFolders": [
+      "node_modules"
+    ],
+    "abracadabra.mergeIfStatements.showInQuickFix": false,
+    "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": -1
+  },
+  "$workspace": {
+    "folders": [
+      {
+        "path": "/home/inappropriatecontent"
+      },
+      {
+        "path": "/home/inappropriatecontent/sex/src"
+      }
+    ],
+    "settings": {}
+  },
+  "$keybindings": [
+    {
+      "key": "meta+enter",
+      "command": "workbench.action.showCommands"
+    },
+    {
+      "key": "meta+space",
+      "command": "workbench.action.showCommands"
+    },
+    {
+      "key": "shift+alt+d",
+      "command": "-abracadabra.moveStatementDown",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "shift+alt+u",
+      "command": "-abracadabra.moveStatementUp",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+shift+d",
+      "command": "-workbench.view.debug",
+      "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+      "key": "ctrl+shift+d",
+      "command": "abracadabra.quickFix",
+      "when": "editorTextFocus"
+    }
+  ]
+}
