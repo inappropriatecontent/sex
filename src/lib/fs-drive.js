@@ -1,20 +1,3 @@
-/**
- * Copyright 2020 Google LLC
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-// @license © 2020 Google LLC. Licensed under the Apache License, Version 2.0.
-
 const getFiles = async (
   dirHandle,
   recursive,
@@ -48,17 +31,12 @@ const getFiles = async (
   return [...(await Promise.all(dirs)).flat(), ...(await Promise.all(files))];
 };
 
-/**
- * Opens a directory from disk using the File System Access API.
- * @type { typeof import("../index").directoryOpen }
- */
-export default async (options = {}) => {
-  options.recursive = options.recursive || false;
-  options.mode = options.mode || 'read';
+const getFolder = async () => window.showDirectoryPicker().then(handle => getFiles(handle, false))
+
+const getDrive = async () => {
   const handle = await window.showDirectoryPicker({
-    id: options.id,
-    startIn: options.startIn,
-    mode: options.mode,
+    mode: 'read',
   });
-  return getFiles(handle, options.recursive, undefined, options.skipDirectory);
+  const handles = await getFiles(handle, true, undefined, e => !e.name.startsWith('.'));
+  return { drive: handle.name, vids: handles.filter(e => e.type.startsWith('video')) }
 };
