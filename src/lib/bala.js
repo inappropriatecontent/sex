@@ -1,4 +1,5 @@
-$ = ((document, s_querySelectorAll, $) => (
+{
+	let $ = ((document, s_querySelectorAll, $) => (
 	($ = (s, context, bala=[]) => (
 		s && bala.push( // if s is truly then push the following
 			...(s.dispatchEvent // if arg is node or window,
@@ -22,3 +23,14 @@ $ = ((document, s_querySelectorAll, $) => (
 
 	$
 ))(document, 'querySelectorAll');
+
+	
+	if (typeof define == 'function' && define.amd) {
+		define([], () => $);
+	} else if (typeof module == 'object' && module.exports) {
+		module.exports = $;
+	} else {
+		window.$ = $.one;
+		window.$d = $;
+	}
+};
