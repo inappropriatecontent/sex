@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export GHP=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
+chmoexport GHP=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
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
 && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
