@@ -1,47 +1,53 @@
-<script src="basic.js" type="module"></script>
-
+<script src="basic.js"
+        type="module"></script>
 <template class="basic">
-  <media-controller>
-    <video slot="media" src muted crossorigin playsinline>
-    </video>
-    <media-poster-image slot="poster" src
-      placeholder-src="data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOACADASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAQQAAwX/xAAaEAADAQEBAQAAAAAAAAAAAAAAAQIDURJB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQME/8QAGBEBAAMBAAAAAAAAAAAAAAAAAAETFGH/2gAMAwEAAhEDEQA/AG2D0l9Fa3ZU9KZl0QtU0VpPQPVCCqukdV0NHDU//9k="></media-poster-image>
-    <media-loading-indicator media-loading slot="centered-chrome" no-auto-hide></media-loading-indicator>
-    <media-control-bar>
-      <media-play-button></media-play-button>
-      <media-seek-backward-button seek-offset="15"></media-seek-backward-button>
-      <media-seek-forward-button seek-offset="15"></media-seek-forward-button>
-      <media-mute-button></media-mute-button>
-      <media-volume-range></media-volume-range>
-      <media-time-range></media-time-range>
-      <media-time-display show-duration remaining></media-time-display>
-      <media-playback-rate-button></media-playback-rate-button>
-      <media-pip-button></media-pip-button>
-      <media-fullscreen-button></media-fullscreen-button>
-    </media-control-bar>
-  </media-controller>
-  <style>
-    /** add styles to prevent CLS (Cumulative Layout Shift) */
-    media-controller:not([audio]) {
+   <media-controller>
+      <video slot="media"
+             src="src"
+             muted="muted"
+             crossorigin="crossorigin"
+             playsinline="playsinline"></video>
+      <media-poster-image slot="poster"
+                          src="src"
+                          placeholder-src="data:image/jpeg;base64,/9j/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAOACADASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAQQAAwX/xAAaEAADAQEBAQAAAAAAAAAAAAAAAQIDURJB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQME/8QAGBEBAAMBAAAAAAAAAAAAAAAAAAETFGH/2gAMAwEAAhEDEQA/AG2D0l9Fa3ZU9KZl0QtU0VpPQPVCCqukdV0NHDU//9k="></media-poster-image>
+      <media-loading-indicator media-loading="media-loading"
+                               slot="centered-chrome"
+                               no-auto-hide="no-auto-hide"></media-loading-indicator>
+      <media-control-bar>
+         <media-play-button></media-play-button>
+         <media-seek-backward-button seek-offset="15"></media-seek-backward-button>
+         <media-seek-forward-button seek-offset="15"></media-seek-forward-button>
+         <media-mute-button></media-mute-button>
+         <media-volume-range></media-volume-range>
+         <media-time-range></media-time-range>
+         <media-time-display show-duration="show-duration"
+                             remaining="remaining"></media-time-display>
+         <media-playback-rate-button></media-playback-rate-button>
+         <media-pip-button></media-pip-button>
+         <media-fullscreen-button></media-fullscreen-button>
+      </media-control-bar>
+   </media-controller>
+   <style>
+   /** add styles to prevent CLS (Cumulative Layout Shift) */
+   media-controller:not([audio]) {
       display: block;
       /* expands the container if preload=none */
       max-width: 960px;
       /* allows the container to shrink if small */
       aspect-ratio: 2.4;
       /* set container aspect ratio if preload=none */
-    }
+   }
 
-    video {
+   video {
       width: 100%;
       /* prevents video to expand beyond its container */
-    }
+   }
 
-    media-airplay-button[media-airplay-unavailable],
-    media-fullscreen-button[media-fullscreen-unavailable],
-    media-volume-range[media-volume-unavailable],
-    media-pip-button[media-pip-unavailable] {
+   media-airplay-button[media-airplay-unavailable],
+   media-fullscreen-button[media-fullscreen-unavailable],
+   media-pip-button[media-pip-unavailable],
+   media-volume-range[media-volume-unavailable] {
       display: none;
-    }
-  </style>
-
+   }
+   </style>
 </template>
