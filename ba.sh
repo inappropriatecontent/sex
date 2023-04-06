@@ -1,8 +1,7 @@
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install build-essential -y
-sudo apt-get update -y
-sudo apt-get install -y wget tar vim less micro
+sudo apt-get install -y build-essential wget tar vim less micro
+
 wget https://github.com/sayanarijit/xplr/releases/latest/download/xplr-linux.tar.gz
 tar -xzvf xplr-linux.tar.gz
 sudo mv xplr /usr/local/bin/
